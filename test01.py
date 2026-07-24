@@ -26,7 +26,7 @@ while True :
         print(p)
         answer = input('\n정답을 입력하세요 : ')
 
-        if answer == a :
+        if answer.lower() == a.lower() :
             print('정답입니다.\n')
             count = count + 1
             i = i + 1
