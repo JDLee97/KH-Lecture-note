@@ -13,23 +13,34 @@ while True :
 
     problem_index = list(range(0, 7))  # 문제 인덱스 생성
     random.shuffle(problem_index)  # 랜덤하게 섞어서 앞에 3개만 뽑아 쓸 예정
+    count = 0  # 문제 맞춘횟수
 
     if typeAnswer == '0' :
         break
 
     while i < 3 :
-        count = 0  # 문제 맞춘횟수
+
 
         p = set_list[problem_index[i]][0]
         a = set_list[problem_index[i]][1]
         print(p)
-        answer = input('정답을 입력하세요 : ')
+        answer = input('\n정답을 입력하세요 : ')
 
         if answer == a :
-            print('정답입니다.')
-            count += 1
+            print('정답입니다.\n')
+            count = count + 1
             i = i + 1
         else :
-            print(f'오답입니다. 정답은 {a} 입니다.')
+            print(f'오답입니다. 정답은 {a} 입니다.\n')
             i = i + 1
 
+    print(f'{count}문제 맞추셨습니다.')
+
+    if count == 0:
+        print('성적은 F 입니다.')
+    elif count == 1:
+        print('성적은 C 입니다.')
+    elif count == 2:
+        print('성적은 B 입니다.')
+    else :
+        print('성적은 A 입니다.')
